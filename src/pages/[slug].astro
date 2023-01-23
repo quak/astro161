@@ -7,7 +7,6 @@ export async function getStaticPaths() {
   //const pagesWithSlugs = await getAllPagesWithSlugs(); 
 //console.log(pagesWithSlugs);
 const pagesWithSlugsAlt = await getAllPagesWithSlugsAlt(); 
-console.log(pagesWithSlugsAlt);
 
 return await pagesWithSlugsAlt.edges.map(({ node }) => {
   return {
@@ -15,13 +14,11 @@ return await pagesWithSlugsAlt.edges.map(({ node }) => {
   };
 });
 
-
-
 }
 
 const { slug } = Astro.params;
 
-//const page = await getPageBySlugAlt(slug);
+const page = await getPageBySlugAlt(slug);
 
 ---
 

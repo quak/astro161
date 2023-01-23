@@ -76,9 +76,7 @@ async function fetchAPI(query, { variables } = {}) {
   }
 
   export async function getPageBySlugAlt(slug) {
-    const data = await fetchAPI(`
-    
-    `);
+   
     const response = await fetch("https://wordpress-754698-3209078.cloudwaysapps.com/graphql",
     {
       method: 'POST',
@@ -89,9 +87,14 @@ async function fetchAPI(query, { variables } = {}) {
             title
             content
           }
-        }`
+        }`,
+        variables: {
+            name: "Toronto",
+        },
       }),
     }).then(data=>data.json())
 
-    return response?.data?.page;
+    
+    const page = response?.data?.page;
+    return page;
   }
