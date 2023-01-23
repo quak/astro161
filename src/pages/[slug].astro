@@ -1,10 +1,10 @@
 ---
-//import { getAllPagesWithSlugs, getPageBySlug } from '../lib/api';
+import { getAllPagesWithSlugs, getPageBySlug } from '../lib/api';
 import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
 
 export async function getStaticPaths() {
-  const pagesWithSlugs = null;//await getAllPagesWithSlugs();
+  const pagesWithSlugs = await getAllPagesWithSlugs();
   return pagesWithSlugs.edges.map(({ node }) => {
     return {
       params: { slug: node.slug },
@@ -17,7 +17,7 @@ const slug = Astro.params.slug;
 
 
 
-const page = "";//await getPageBySlug(slug);
+const page = await getPageBySlug(slug);
 
 const answer = 411;
 
@@ -26,15 +26,15 @@ const answer = 411;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title></title>
+    <title>{page.title}</title>
     <meta name="viewport" content="width=device-width" />
     
   </head>
   <body>
     <div class="flex flex-col p-10">
-      <div class="mb-5 text-4xl font-bold"></div>
+      <div class="mb-5 text-4xl font-bold">{page.title}</div>
       <article class="prose lg:prose-xl">
-        asdasd
+        {page.content}
       </article>
     </div>
   </body>
