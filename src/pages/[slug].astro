@@ -1,5 +1,5 @@
 ---
-import { getAllPagesWithSlugs,getAllPagesWithSlugsAlt, getPageBySlug } from '../lib/api';
+import { getAllPagesWithSlugs,getAllPagesWithSlugsAlt, getPageBySlug,getPageBySlugAlt } from '../lib/api';
 import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
 
@@ -22,7 +22,7 @@ return await pagesWithSlugsAlt.edges.map(({ node }) => {
 
 const { slug } = Astro.params;
 
-const page = "asdasd";//await getPageBySlug("about");
+const page = await getPageBySlugAlt(slug);
 
 ---
 

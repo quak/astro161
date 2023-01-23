@@ -74,3 +74,24 @@ async function fetchAPI(query, { variables } = {}) {
     const posts = response?.data?.pages;
     return posts;
   }
+
+  export async function getPageBySlugAlt(slug) {
+    const data = await fetchAPI(`
+    
+    `);
+    const response = await fetch("https://wordpress-754698-3209078.cloudwaysapps.com/graphql",
+    {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        query: `    {
+          page(id: "${slug}", idType: URI) {
+            title
+            content
+          }
+        }`
+      }),
+    }).then(data=>data.json())
+
+    return response?.data?.page;
+  }
