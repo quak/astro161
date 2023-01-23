@@ -12,14 +12,9 @@ export async function getStaticPaths() {
   });
 }
 
-
 const slug = Astro.params.slug;
 
-
-
 const page = await getPageBySlug(slug);
-
-const answer = 411;
 
 ---
 
