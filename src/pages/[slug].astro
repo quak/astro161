@@ -5,14 +5,6 @@ import '../styles/global.css';
 
 export async function getStaticPaths() {
   const pagesWithSlugs = await getAllPagesWithSlugs();
-//   return [
-//     { params: { slug: "home" }},
-//     { params: { slug: "projects" }},
-//     { params: { slug: "services" }},
-//     { params: { slug: "about" }},
-//     { params: { slug: "contact" }},
-//   ];
-// }
   return pagesWithSlugs.edges.map(({ node }) => {
     return {
       params: { slug: node.slug },
