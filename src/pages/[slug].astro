@@ -18,12 +18,12 @@ const pws = {
   ]
 };
 
-  return pws.edges.map(({ node }) => {
+  // return pws.edges.map(({ node }) => {
 
-    return {
-      params: { slug: node.slug },
-    };
-  });
+  //   return {
+  //     params: { slug: node.slug },
+  //   };
+  // });
 
 
   // return pagesWithSlugs.edges.map(({ node }) => {
@@ -31,13 +31,13 @@ const pws = {
   //     params: { slug: node.slug },
   //   };
   // });
-  // return [
-  //   {params: {slug :"home"}},
-  //   {params: {slug :"about"}},
-  //   {params: {slug :"projects"}},
-  //   {params: {slug :"services"}},
-  //   {params: {slug :"contact"}},
-  // ]
+  return [
+    {params: {slug :"home"}},
+    {params: {slug :"about"}},
+    {params: {slug :"projects"}},
+    {params: {slug :"services"}},
+    {params: {slug :"contact"}},
+  ]
 }
 
 const { slug } = Astro.params;
