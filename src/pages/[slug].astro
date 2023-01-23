@@ -6,72 +6,23 @@ import '../styles/global.css';
 export async function getStaticPaths() {
   //const pagesWithSlugs = await getAllPagesWithSlugs(); 
 //console.log(pagesWithSlugs);
-//const pagesWithSlugsAlt = await getAllPagesWithSlugsAlt(); 
+const pagesWithSlugsAlt = await getAllPagesWithSlugsAlt(); 
+console.log(pagesWithSlugsAlt);
 
-const pws = {
-  edges: [
-    { node: { slug: 'contact' } },
-    { node: { slug: 'services' } },
-    { node: { slug: 'projects' } },
-    { node: { slug: 'about' } },
-    { node: { slug: 'home' } },
-    { node: { slug: 'sample-page' } } 
-  ]
-};
+return await pagesWithSlugsAlt.edges.map(({ node }) => {
 
-  // return pws.edges.map(({ node }) => {
-
-  //   return {
-  //     params: { slug: node.slug },
-  //   };
-  // });
+  return {
+    params: { slug: node.slug },
+  };
+});
 
 
-  // return pagesWithSlugs.edges.map(({ node }) => {
-  //   return {
-  //     params: { slug: node.slug },
-  //   };
-  // });
-  return [
-    {params: {slug :"home"}},
-    {params: {slug :"about"}},
-    {params: {slug :"projects"}},
-    {params: {slug :"services"}},
-    {params: {slug :"contact"}},
-  ]
+
 }
 
 const { slug } = Astro.params;
 
 const page = "asdasd";//await getPageBySlug("about");
-
-
-const response = await fetch("https://wordpress-754698-3209078.cloudwaysapps.com/graphql",
-  {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({
-      query: `{
-          pages {
-            nodes {
-              title
-              content
-              testACF {
-                testacf
-              }
-            }
-          }
-        }`,
-      variables: {
-          name: "Toronto",
-      },
-    }),
-  });
-
-const json = await response.json();
-const weather = json.data;
-
-console.log(weather);
 
 ---
 

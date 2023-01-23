@@ -50,25 +50,27 @@ async function fetchAPI(query, { variables } = {}) {
   }
 
   export async function getAllPagesWithSlugsAlt(){
-    const headers2 = { 'Content-Type': 'application/json' };
-    const postData = fetch(API_URL ,{
-      method: 'post',
-      headers2,
+    
+    const response = await fetch("https://wordpress-754698-3209078.cloudwaysapps.com/graphql",
+    {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
-        query: `{
-          pages {
-            nodes {
-              title
-              content
-              testACF {
-                testacf
-              }
+        query: `    {
+        pages(first: 10000) {
+          edges {
+            node {
+              slug
             }
           }
-        }`
-      })
+        }
+      }`,
+        variables: {
+            name: "Toronto",
+        },
+      }),
     }).then(data=>data.json())
 
-    const posts = postData?.data?.pages?.nodes;
+    const posts = response?.data?.pages;
     return posts;
   }
