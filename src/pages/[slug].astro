@@ -6,6 +6,12 @@ import '../styles/global.css';
 export async function getStaticPaths() {
   const pagesWithSlugs = await getAllPagesWithSlugs(); 
   console.log(pagesWithSlugs);
+
+  return pagesWithSlugs.map((node) =>{
+    return { params:{ slug: node.slug}}
+  });
+
+
   // return pagesWithSlugs.edges.map(({ node }) => {
   //   return {
   //     params: { slug: node.slug },
