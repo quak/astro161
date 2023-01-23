@@ -1,10 +1,10 @@
 ---
-import { getAllPagesWithSlugs, getPageBySlug } from '../lib/api';
+//import { getAllPagesWithSlugs, getPageBySlug } from '../lib/api';
 import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
 
 export async function getStaticPaths() {
-  const pagesWithSlugs = await getAllPagesWithSlugs();
+  const pagesWithSlugs = null;//await getAllPagesWithSlugs();
   return pagesWithSlugs.edges.map(({ node }) => {
     return {
       params: { slug: node.slug },
