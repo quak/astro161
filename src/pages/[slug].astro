@@ -4,10 +4,21 @@ import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
 
 export async function getStaticPaths() {
-  const pagesWithSlugs = await getAllPagesWithSlugs(); 
+  //const pagesWithSlugs = await getAllPagesWithSlugs(); 
+//console.log(pagesWithSlugs);
 
+const pws = {
+  edges: [
+    { node: { slug: 'contact' } },
+    { node: { slug: 'services' } },
+    { node: { slug: 'projects' } },
+    { node: { slug: 'about' } },
+    { node: { slug: 'home' } },
+    { node: { slug: 'sample-page' } }
+  ]
+};
 
-  return pagesWithSlugs.edges.map(({ node }) => {
+  return pws.edges.map(({ node }) => {
 
     return {
       params: { slug: node.slug },
