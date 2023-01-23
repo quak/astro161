@@ -48,3 +48,27 @@ async function fetchAPI(query, { variables } = {}) {
     `);
     return data?.page;
   }
+
+  export async function getAllPagesWithSlugsAlt(){
+    const headers2 = { 'Content-Type': 'application/json' };
+    const postData = fetch(API_URL ,{
+      method: 'post',
+      headers2,
+      body: JSON.stringify({
+        query: `{
+          pages {
+            nodes {
+              title
+              content
+              testACF {
+                testacf
+              }
+            }
+          }
+        }`
+      })
+    }).then(data=>data.json())
+
+    const posts = postData?.data?.pages?.nodes;
+    return posts;
+  }

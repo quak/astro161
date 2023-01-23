@@ -1,12 +1,13 @@
 ---
-import { getAllPagesWithSlugs, getPageBySlug } from '../lib/api';
+import { getAllPagesWithSlugs,getAllPagesWithSlugsAlt, getPageBySlug } from '../lib/api';
 import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
 
 export async function getStaticPaths() {
   //const pagesWithSlugs = await getAllPagesWithSlugs(); 
 //console.log(pagesWithSlugs);
-
+const pagesWithSlugsAlt = await getAllPagesWithSlugsAlt(); 
+console.log(pagesWithSlugsAlt);
 const pws = {
   edges: [
     { node: { slug: 'contact' } },
