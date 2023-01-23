@@ -25,15 +25,15 @@ const page = await getPageBySlugAlt(slug);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>asdasd</title>
+    <title>{page.title}</title>
     <meta name="viewport" content="width=device-width" />
     
   </head>
   <body>
     <div class="flex flex-col p-10">
-      <div class="mb-5 text-4xl font-bold">asdad</div>
+      <div class="mb-5 text-4xl font-bold">{page.title}</div>
       <article class="prose lg:prose-xl">
-        asdasd
+        {page.content}
       </article>
     </div>
   </body>
