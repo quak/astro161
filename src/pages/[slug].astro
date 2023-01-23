@@ -28,7 +28,7 @@ export async function getStaticPaths() {
   //   {params: {slug :"contact"}},
   // ]
 }
-console.log(Astro.params);
+
 const { slug } = Astro.params;
 
 const page = await getPageBySlug("about");
