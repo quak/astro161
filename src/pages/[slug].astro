@@ -5,18 +5,19 @@ import '../styles/global.css';
 
 export async function getStaticPaths() {
   const pagesWithSlugs = await getAllPagesWithSlugs(); 
-  return pagesWithSlugs.edges.map(({ node }) => {
-    return {
-      params: { slug: node.slug },
-    };
-  });
-  // return [
-  //   {params: {slug :"home"}},
-  //   {params: {slug :"about"}},
-  //   {params: {slug :"projects"}},
-  //   {params: {slug :"services"}},
-  //   {params: {slug :"contact"}},
-  // ]
+  console.log(pagesWithSlugs);
+  // return pagesWithSlugs.edges.map(({ node }) => {
+  //   return {
+  //     params: { slug: node.slug },
+  //   };
+  // });
+  return [
+    {params: {slug :"home"}},
+    {params: {slug :"about"}},
+    {params: {slug :"projects"}},
+    {params: {slug :"services"}},
+    {params: {slug :"contact"}},
+  ]
 }
 
 const slug = Astro.params.slug;
