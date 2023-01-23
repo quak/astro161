@@ -38,7 +38,7 @@ async function fetchAPI(query, { variables } = {}) {
   }
 
   export async function getPageBySlug(slug) {
-    const data = await fetchAPI(`
+    const data = await fetch(`
     {
       page(id: "${slug}", idType: URI) {
         title
