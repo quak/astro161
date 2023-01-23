@@ -23,7 +23,7 @@ async function fetchAPI(query, { variables } = {}) {
 
 
   export async function getAllPagesWithSlugs() {
-    const data = await fetchAPI(`
+    const data = await fetch(`
     {
       pages(first: 10000) {
         edges {
