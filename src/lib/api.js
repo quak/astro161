@@ -23,7 +23,7 @@ async function fetchAPI(query, { variables } = {}) {
 
 
   export async function getAllPagesWithSlugs() {
-    const data = await fetch(`
+    const data = await fetchAPI(`
     {
       pages(first: 10000) {
         edges {
@@ -38,7 +38,7 @@ async function fetchAPI(query, { variables } = {}) {
   }
 
   export async function getPageBySlug(slug) {
-    const data = await fetch(`
+    const data = await fetchAPI(`
     {
       page(id: "${slug}", idType: URI) {
         title
