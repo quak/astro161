@@ -3,6 +3,18 @@ import { getMenu } from '../lib/api';
 const menudata = await getMenu();
 const menuitems = menudata[0].menuItems.edges;
 ---
-<div class="fixed hidden">
+<div class="c-hamburger c-hamburger--arrow-right" id="avaxhamburger">
+    <div class="c-hamburger-inner">
+        <span class="c-hamburger-bar"></span>
+        <span class="c-hamburger-bar"></span>
+        <span class="c-hamburger-bar"></span>
+    </div>
+</div>
+
+<div class="fixed hidden" id="avaxmenu">
 {menuitems.map((menuitem) => <a href={menuitem.node.path}>{menuitem.node.label}</a>)}
 </div>
+
+<script>
+import '../scripts/navigation.js';
+</script>
