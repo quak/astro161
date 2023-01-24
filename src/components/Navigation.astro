@@ -4,9 +4,8 @@ const menudata = await getMenu();
 console.log("asdasd1");
 console.log(menudata);
 console.log("asdasd2");
+const menuitems = menudata[0].menuItems.edges;
+
 ---
-<a href="">Home</a>
-<a href="">About</a>
-<a href="">Projects</a>
-<a href="">Services</a>
-<a href="">Contact</a>
+
+{menuitems.map((menuitem) => <a href={menuitem.node.path}>{menuitem.node.label}</a>)}

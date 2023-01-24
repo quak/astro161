@@ -94,6 +94,6 @@ const API_URL = process.env.WP_URL
     }).then(data=>data.json())
 
     
-    const page = response?.data?.page;
+    const page = response?.data?.menus?.nodes;
     return page;
   }
