@@ -1,11 +1,8 @@
 ---
 import { getMenu } from '../lib/api';
 const menudata = await getMenu();
-console.log("asdasd1");
-console.log(menudata);
-console.log("asdasd2");
 const menuitems = menudata[0].menuItems.edges;
-
 ---
-
+<div class="fixed hidden">
 {menuitems.map((menuitem) => <a href={menuitem.node.path}>{menuitem.node.label}</a>)}
+</div>
