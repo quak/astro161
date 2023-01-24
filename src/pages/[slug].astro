@@ -2,6 +2,7 @@
 import { getAllPagesWithSlugsAlt,getPageBySlugAlt } from '../lib/api';
 import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
   //const pagesWithSlugs = await getAllPagesWithSlugs(); 
@@ -23,20 +24,10 @@ const page = await getPageBySlugAlt(slug);
 
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Written by A.N. Author, Illustrated by V. Gogh, Price: $17.99, Length: 784 pages">
-    <title>{page.title}</title>
-    <meta name="viewport" content="width=device-width" />
-    
-  </head>
-  <body>
-    <div class="flex flex-col p-10">
-      <div class="mb-5 text-4xl font-bold">{page.title}</div>
-      <article class="prose lg:prose-xl">
-        {page.content}
-      </article>
-    </div>
-  </body>
-</html>
+<BaseLayout pageTitle={page.title}>
+  <div class="flex flex-col p-10">
+    <article class="prose lg:prose-xl">
+      {page.content}
+    </article>
+  </div>
+</BaseLayout>
