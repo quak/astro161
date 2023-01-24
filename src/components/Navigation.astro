@@ -1,5 +1,7 @@
 ---
-
+import { getMenu } from '../lib/api';
+const menudata = await getMenu();
+console.log(menudata);
 ---
 <a href="">Home</a>
 <a href="">About</a>

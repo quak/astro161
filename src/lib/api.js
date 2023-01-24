@@ -4,50 +4,7 @@ dotenv.config();
 
 const API_URL = process.env.WP_URL
 
-async function fetchAPI(query, { variables } = {}) {
-    const headers = { 'Content-Type': 'application/json' };
-    const res = await fetch(API_URL, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify({ query, variables }),
-    });
-  
-    const json = await res.json();
-    if (json.errors) {
-      console.log(json.errors);
-      throw new Error('Failed to fetch API');
-    }
-  
-    return json.data;
-  }
 
-
-  export async function getAllPagesWithSlugs() {
-    const data = await fetchAPI(`
-    {
-      pages(first: 10000) {
-        edges {
-          node {
-            slug
-          }
-        }
-      }
-    }
-    `);
-    return data?.pages;
-  }
-
-  export async function getPageBySlug(slug) {
-    const data = await fetchAPI(`
-    {
-      page(id: "${slug}", idType: URI) {
-        title
-        content
-      }
-    }
-    `);
-    return data?.page;
-  }
 
   export async function getAllPagesWithSlugsAlt(){
     
@@ -86,6 +43,48 @@ async function fetchAPI(query, { variables } = {}) {
           page(id: "${slug}", idType: URI) {
             title
             content
+          }
+        }`,
+        variables: {
+            name: "Toronto",
+        },
+      }),
+    }).then(data=>data.json())
+
+    
+    const page = response?.data?.page;
+    return page;
+  }
+
+
+
+  export async function getMenu(slug) {
+   
+    const response = await fetch("https://wordpress-754698-3209078.cloudwaysapps.com/graphql",
+    {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        query: `{
+          menus(where: {location: PRIMARY}) {
+            nodes {
+              menuItems {
+                edges {
+                  node {
+                    path
+                    label
+                    connectedNode {
+                      node {
+                        ... on Page {
+                          isPostsPage
+                          slug
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }`,
         variables: {
