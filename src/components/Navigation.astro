@@ -13,6 +13,24 @@ const menuitems = menudata[0].menuItems.edges;
 
 <div class="fixed hidden w-screen h-screen flex top-0 items-center justify-center bg-slate-50" id="avaxmenu">
     <div class="">
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269.49 353.38">
+            <defs>
+                <style>
+                    .cls-1{fill:#fff;stroke:#000;stroke-miterlimit:10;stroke-width:20px;
+            stroke-dasharray: 2338.5;
+           stroke-dashoffset: 2338.5;
+                        
+                    }
+                    @keyframes dash2 {
+                           to { stroke-dashoffset: 0;}
+                    }
+                    .fireanimate{
+                        animation: dash2 2s linear 1;
+                    }
+                </style>
+            </defs>
+            <polyline id="avaxlogo" class="cls-1" points="198.78 196.07 21.36 325.42 134.75 28.07 248.13 325.42 70.78 196.07"/>
+        </svg>
         {menuitems.map((menuitem) => <a class="text-2xl block text-center font-bold py-4 my-2" href={menuitem.node.path}>{menuitem.node.label}</a>)}
     </div>
 </div>
