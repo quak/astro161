@@ -27,7 +27,8 @@ const page = await getPageBySlugAlt(slug);
 <BaseLayout pageTitle={page.title}>
   <div class="flex flex-col p-10">
     <article class="prose lg:prose-xl">
-      {page.content}
+      <Fragment set:html="page.content"/>
+      
     </article>
   </div>
 </BaseLayout>

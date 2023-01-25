@@ -3,11 +3,13 @@ import { getMenu } from '../lib/api';
 const menudata = await getMenu();
 const menuitems = menudata[0].menuItems.edges;
 ---
-<div class="c-hamburger c-hamburger--arrow-right relative z-50" id="avaxhamburger">
-    <div class="c-hamburger-inner">
-        <span class="c-hamburger-bar"></span>
-        <span class="c-hamburger-bar"></span>
-        <span class="c-hamburger-bar"></span>
+<div class="flex justify-end">
+    <div class="c-hamburger c-hamburger--arrow-right relative z-50" id="avaxhamburger">
+        <div class="c-hamburger-inner">
+            <span class="c-hamburger-bar"></span>
+            <span class="c-hamburger-bar"></span>
+            <span class="c-hamburger-bar"></span>
+        </div>
     </div>
 </div>
 
