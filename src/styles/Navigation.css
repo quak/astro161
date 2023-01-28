@@ -3,6 +3,10 @@
     background-size: cover;
 }
 
+#bgtest{
+    min-height: -webkit-fill-avaible;
+}
+
 .avax-menuitem:hover{
     color:#000;
     text-shadow: -1px 0 #bbb, 0 1px #bbb, 1px 0 #bbb, 0 -1px #bbb;
