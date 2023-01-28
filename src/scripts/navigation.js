@@ -10,12 +10,6 @@ document.getElementById('avaxhamburger').addEventListener('click', () => {
   document.querySelector('#avaxmenu').classList.toggle('hidden');
   document.querySelector('#avaxmaintitle').classList.toggle('hidden');
 
-  const appHeight = () => {
-    const doc = document.documentElement
-    doc.style.setProperty("--vh", `${window.innerHeight}px`)
-   }
-   window.addEventListener("resize", appHeight)
-   appHeight()
   
 });
 
