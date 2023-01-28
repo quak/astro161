@@ -3,10 +3,6 @@
     background-size: cover;
 }
 
-.avax-menuitem{
-    font-size: 6.5rem!important;
-    
-}
 .avax-menuitem:hover{
     color:#000;
     text-shadow: -1px 0 #bbb, 0 1px #bbb, 1px 0 #bbb, 0 -1px #bbb;
