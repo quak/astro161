@@ -1,10 +1,15 @@
+:root{
+    --doc-height:100%
+}
+
+
 #bg{
     background-image: url("/fff.jpeg");
     background-size: cover;
 }
 
 #bgtest{
-    height: 100vh;
+    height: 100%;
     min-height: -webkit-fill-avaible;
 }
 
@@ -58,10 +63,9 @@
     display: block;
 }
 
-body {
+html,body {
+    padding: 0px;
+    margin: 0px;
     height: 100vh;
-    min-height: -webkit-fill-available;
-}
-html {
-    height: -webkit-fill-available;
+    height: var(--doc-height);
 }
