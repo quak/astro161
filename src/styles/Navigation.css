@@ -59,11 +59,9 @@
 }
 
 body {
-    min-height: 100vh;
-    min-height: stretch;
+    height: 100vh;
     min-height: -webkit-fill-available;
 }
 html {
-    height: stretch;
     height: -webkit-fill-available;
 }
