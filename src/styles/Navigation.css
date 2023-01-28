@@ -4,6 +4,7 @@
 }
 
 #bgtest{
+    height: 100vh;
     min-height: -webkit-fill-avaible;
 }
 
