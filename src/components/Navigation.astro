@@ -6,23 +6,31 @@ const menuitems = menudata[0].menuItems.edges;
 ---
 
 <div class="h-screen flex">
-    <div class="m-2 p-4 rounded-3xl flex-1" id="bg">
+    <div class="m-2 p-4 rounded-3xl flex-1 relative" id="bg">
         <div class="flex justify-between">
             
-            <div class="block w-12 h-12">
-                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269.49 353.38">
+            <div class="block w-16 h-12">
+                <svg id="Layer_1" class="w-12 h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269.49 353.38">
                     <defs>
                         <style>
-                            .cls-1{fill:#f081a2;stroke:#bbb;stroke-miterlimit:10;stroke-width:20px;
-                    stroke-dasharray: 2338.5;
-                stroke-dashoffset: 2338.5;
-                                
-                            }
-                            @keyframes dash2 {
-                                to { stroke-dashoffset: 0;}
+                            .cls-1{
+                                fill:#fff;
+                                stroke:#bbb;
+                                stroke-miterlimit:10;
+                                stroke-width:20px;
+                                stroke-dasharray: 2338.5;
+                                stroke-dashoffset: 2338.5;
+                                transform-origin: center;    
+                                animation-timing-function: cubic-bezier(.71,.17,.88,.64);
                             }
                             .fireanimate{
-                                animation: dash2 2s linear 1;
+                                transform: rotate(135deg);
+                                transition: all 0.3s ease-in-out;
+                            }
+
+                            .wateranimate{
+                                transform: rotate(0deg);
+                                transition: all 0.3s ease-in-out;
                             }
                         </style>
                     </defs>
@@ -40,18 +48,35 @@ const menuitems = menudata[0].menuItems.edges;
             
         </div>
         
-        <div class="fixed hidden w-screen h-screen flex top-0 items-center justify-center bg-slate-50" id="avaxmenu">
+        <div class="absolute w-full left-0 h-screen flex top-0 items-center justify-center bg-slate-50" id="avaxmaintitle">
+            <div class="absolute top-1/4 text-center">
+                 <h1 class="text-2xl block text-center font-bold py-4 leading-12">AVAX</h1>
+                 <span></span>
+                 <h2>Digital ideas</h2>
+            </div>
+        </div>
+
+        <div class="absolute h-screen top-0 flex items-center left-0" id="avax-copyright">
+            <p>2023 Augustin Malle</p>
+        </div>
+
+
+        <div class="absolute h-screen top-0 flex items-center right-0" id="avax-contact">
+            <span>
+                <a href="mailto: office@avax.at" class="px-2 mx-2">MAIL</a><a href="tel:+43 650 505 66 44" class="px-2 mx-2">TEL</a>     
+            </span>
+        </div>
+        
+        <div class="absolute hidden left-0 h-screen flex top-0 items-center justify-center bg-slate-50 w-full " id="avaxmenu">
             <div class="">
-                
                 {menuitems.map((menuitem) => <a class="text-2xl block text-center font-bold py-4 leading-12 avax-menuitem text-avaxpink"  href={menuitem.node.path}>{menuitem.node.label}</a>)}
             </div>
         </div>
 
-        <div class="flex justify-between">
-            <div></div>
+        <div class="flex justify-between absolute bottom-4" id="avax-lng">
             <div>
-                <span>SL</span>
-                <span>AT</span>
+                <a href="#" class="block hover:text-avaxpink">AT</a>
+                <a href="#" class="block hover:text-avaxpink">SL</a>
             </div>
         </div>
     </div>

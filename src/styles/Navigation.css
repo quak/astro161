@@ -1,10 +1,55 @@
 #bg{
     background-image: url("/fff.jpeg");
+    background-size: cover;
 }
 
 .avax-menuitem{
     font-size: 6.5rem!important;
+    
 }
 .avax-menuitem:hover{
     color:#000;
+    text-shadow: -1px 0 #bbb, 0 1px #bbb, 1px 0 #bbb, 0 -1px #bbb;
 }
+
+#avax-lng a{
+    color: #bbb;
+}
+
+#avax-lng a:hover{
+    color: #f081a2;
+}
+
+#avaxmaintitle h1{
+    font-size: 8.5rem!important;
+    line-height: 6rem;
+}
+
+#avaxmaintitle h2{
+    font-family: BrokenDreams;
+    font-size: 4rem;
+    color: #f92564;
+
+}
+
+#avax-copyright p{
+    transform-origin: left;
+    transform: rotate(270deg);
+    background: white;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 10px;
+}
+
+
+
+#avax-contact span{
+    transform-origin: right;
+    transform: rotate(270deg);
+    background: white;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 10px;
+    display: block;
+}
+
