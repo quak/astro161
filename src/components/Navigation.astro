@@ -1,59 +1,59 @@
 ---
 import { getMenu } from '../lib/api';
+import '../styles/Navigation.css';
 const menudata = await getMenu();
 const menuitems = menudata[0].menuItems.edges;
 ---
-<div class="flex justify-end">
-    <div class="c-hamburger c-hamburger--arrow-right relative z-50" id="avaxhamburger">
-        <div class="c-hamburger-inner">
-            <span class="c-hamburger-bar"></span>
-            <span class="c-hamburger-bar"></span>
-            <span class="c-hamburger-bar"></span>
-        </div>
-    </div>
-</div>
 
-<div class="fixed hidden w-screen h-screen flex top-0 items-center justify-center bg-slate-50" id="avaxmenu">
-    <div class="">
-        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269.49 353.38">
-            <linearGradient id="myGradient" gradientTransform="rotate(90)" x1="-0.3" x2="1.3">
-                <stop offset="0" stop-color="red"/>
-                <stop offset="0.2857" stop-color="#ff0"/>
-                <stop offset="0.4286" stop-color="#0f0"/>
-                <stop offset="0.5714" stop-color="cyan"/>
-                <stop offset="0.7142" stop-color="blue"/>
-                <stop offset="0.8571" stop-color="#f0f"/>
-                <stop offset="1" stop-color="red"/>
-                <animateTransform attributeName="gradientTransform"
-                                                    attributeType="XML"
-                                                    type="rotate"
-                                                    from="0 0.5 0.5"
-                                                    to="360 0.5 0.5"
-                                                    dur="30s"
-                                                    repeatCount="indefinite"/>
-            </linearGradient>
-            <defs>
-                <style>
-                    .cls-1{fill:transparent;stroke:#bbb;stroke-miterlimit:10;stroke-width:20px;
-            stroke-dasharray: 2338.5;
-           stroke-dashoffset: 2338.5;
-                        
-                    }
-                    @keyframes dash2 {
-                           to { stroke-dashoffset: 0;}
-                    }
-                    .fireanimate{
-                        animation: dash2 2s linear 1;
-                        
-                    }
-                    .firefulldoublerainbowbg{
-                        fill: url(#myGradient);
-                    }
-                </style>
-            </defs>
-            <polyline id="avaxlogo" class="cls-1" points="198.78 196.07 21.36 325.42 134.75 28.07 248.13 325.42 70.78 196.07"/>
-        </svg>
-        {menuitems.map((menuitem) => <a class="text-2xl block text-center font-bold py-4 my-2" href={menuitem.node.path}>{menuitem.node.label}</a>)}
+<div class="h-screen flex">
+    <div class="m-2 p-4 rounded-3xl flex-1" id="bg">
+        <div class="flex justify-between">
+            
+            <div class="block w-12 h-12">
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269.49 353.38">
+                    <defs>
+                        <style>
+                            .cls-1{fill:#f081a2;stroke:#bbb;stroke-miterlimit:10;stroke-width:20px;
+                    stroke-dasharray: 2338.5;
+                stroke-dashoffset: 2338.5;
+                                
+                            }
+                            @keyframes dash2 {
+                                to { stroke-dashoffset: 0;}
+                            }
+                            .fireanimate{
+                                animation: dash2 2s linear 1;
+                            }
+                        </style>
+                    </defs>
+                    <polyline id="avaxlogo" class="cls-1" points="198.78 196.07 21.36 325.42 134.75 28.07 248.13 325.42 70.78 196.07"/>
+                </svg>
+            </div>
+            
+            <div class="c-hamburger c-hamburger--arrow-right relative z-50" id="avaxhamburger">
+                <div class="c-hamburger-inner">
+                    <span class="c-hamburger-bar"></span>
+                    <span class="c-hamburger-bar"></span>
+                    <span class="c-hamburger-bar"></span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="fixed hidden w-screen h-screen flex top-0 items-center justify-center bg-slate-50" id="avaxmenu">
+            <div class="">
+                
+                {menuitems.map((menuitem) => <a class="text-2xl block text-center font-bold py-4 leading-12 avax-menuitem text-avaxpink"  href={menuitem.node.path}>{menuitem.node.label}</a>)}
+            </div>
+        </div>
+
+        <div class="flex justify-between">
+            <div></div>
+            <div>
+                <span>SL</span>
+                <span>AT</span>
+            </div>
+        </div>
     </div>
 </div>
 

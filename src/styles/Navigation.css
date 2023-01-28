@@ -1,0 +1,10 @@
+#bg{
+    background-image: url("/fff.jpeg");
+}
+
+.avax-menuitem{
+    font-size: 6.5rem!important;
+}
+.avax-menuitem:hover{
+    color:#000;
+}
