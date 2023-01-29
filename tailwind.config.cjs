@@ -15,7 +15,9 @@ module.exports = {
         'avaxpink' : '#f92564',
         'avaxlightpink' : '#ffe7ee',
         'greylight' : '#d3d3d3',
-        'avaxdark' : '#1e1e1e'
+        'avaxdark' : '#1e1e1e',
+        'avaxbg' : '#eeeeee'
+
       },
       extend:{
         lineHeight:{
