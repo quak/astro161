@@ -5,7 +5,7 @@ module.exports = {
       // ...
       deliciousHamburgers: {
         size: '60px',
-        color: '#fff',
+        color: '#d3d3d3',
         colorLight: '#ffe7ee',
         padding: '10px',
         animationSpeed: 2,
@@ -14,7 +14,8 @@ module.exports = {
       colors:{
         'avaxpink' : '#f92564',
         'avaxlightpink' : '#ffe7ee',
-        //'avaxbg' : 'bg-slate-50'
+        'greylight' : '#d3d3d3',
+        'avaxdark' : '#1e1e1e'
       },
       extend:{
         lineHeight:{

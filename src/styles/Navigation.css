@@ -18,9 +18,6 @@
     text-shadow: -1px 0 #bbb, 0 1px #bbb, 1px 0 #bbb, 0 -1px #bbb;
 }
 
-#avax-lng a{
-    color: #bbb;
-}
 
 #avax-lng a:hover{
     color: #f081a2;
