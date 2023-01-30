@@ -125,3 +125,7 @@ html,body {
 #avaxmenu{
     opacity: 0;
 }
+
+#avax-services span{
+    padding: 4px 12px;
+}
