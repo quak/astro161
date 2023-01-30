@@ -77,9 +77,20 @@ html,body {
     animation-fill-mode: forwards;
 }
 
-@keyframes showup {
-    0%{opacity: 0;}
-    60%{opacity: 0.8;}
-    80%{opacity: 1;}
-    100%{opacity: 1;}
+.avax-anim{
+    animation: axmenu 1s alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes axmenu {
+    0%{
+        opacity: 1;
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+    100%{
+        opacity: 0.2;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
 }
