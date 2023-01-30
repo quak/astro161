@@ -8,6 +8,7 @@ document.getElementById('avaxhamburger').addEventListener('click', () => {
   document.getElementById('avaxlogo').classList.toggle('fireanimate');
 
   document.querySelector('#avaxmenu').classList.toggle('hidden');
+  document.querySelector('#avaxmenu').classList.toggle('avax-animate');
   document.querySelector('#avaxmaintitle').classList.toggle('hidden');
 
   
