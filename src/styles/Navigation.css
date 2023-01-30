@@ -60,25 +60,38 @@ html,body {
 }
 
 #avax-di{
-    animation: showup 5s;
+    animation: showup 4s;
     animation-fill-mode: forwards;
 }
 
 @keyframes showup {
     0%{opacity: 0;}
-    60%{opacity: 0.8;}
-    80%{opacity: 1;}
     100%{opacity: 1;}
 }
 
+@keyframes showout {
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+}
 
-.avax-animate .avax-blendin{
+
+.avax-blendout{
+    animation: showout 1s;
+    animation-fill-mode: forwards;
+}
+
+.avax-blendin{
     animation: showup 1s;
     animation-fill-mode: forwards;
 }
 
 .avax-anim{
-    animation: axmenu 1s alternate;
+    animation: axmenu 1s;
+    animation-fill-mode: forwards;
+}
+
+.avax-anim-neg{
+    animation: axmenu2 1s;
     animation-fill-mode: forwards;
 }
 
@@ -89,8 +102,26 @@ html,body {
         filter: grayscale(0%);
     }
     100%{
-        opacity: 0.2;
+        opacity: 0.10;
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
     }
+}
+
+
+@keyframes axmenu2 {
+    0%{
+        opacity: 0.10;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+    100%{
+        opacity: 1;
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+}
+
+#avaxmenu{
+    opacity: 0;
 }
