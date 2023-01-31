@@ -128,4 +128,6 @@ html,body {
 
 #avax-services span{
     padding: 4px 12px;
+    opacity: 0.5;
+    cursor: pointer;
 }
