@@ -10,32 +10,34 @@ const menuitems = menudata[0].menuItems.edges;
         <div class="flex justify-between items-center">
             
             <div class="block w-16 h-12">
-                <svg id="Layer_1" class="w-12 h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269.49 353.38">
-                    <defs>
-                        <style>
-                            .cls-1{
-                                fill:#d3d3d3;
-                                stroke:#bbb;
-                                stroke-miterlimit:10;
-                                stroke-width:20px;
-                                stroke-dasharray: 2338.5;
-                                stroke-dashoffset: 2338.5;
-                                transform-origin: center;    
-                                animation-timing-function: cubic-bezier(.71,.17,.88,.64);
-                            }
-                            .fireanimate{
-                                transform: rotate(135deg);
-                                transition: all 0.3s ease-in-out;
-                            }
+                <a href="/" class="relative z-50">
+                    <svg id="Layer_1" class="w-12 h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269.49 353.38">
+                        <defs>
+                            <style>
+                                .cls-1{
+                                    fill:#d3d3d3;
+                                    stroke:#bbb;
+                                    stroke-miterlimit:10;
+                                    stroke-width:20px;
+                                    stroke-dasharray: 2338.5;
+                                    stroke-dashoffset: 2338.5;
+                                    transform-origin: center;    
+                                    animation-timing-function: cubic-bezier(.71,.17,.88,.64);
+                                }
+                                .fireanimate{
+                                    transform: rotate(135deg);
+                                    transition: all 0.3s ease-in-out;
+                                }
 
-                            .wateranimate{
-                                transform: rotate(0deg);
-                                transition: all 0.3s ease-in-out;
-                            }
-                        </style>
-                    </defs>
-                    <polyline id="avaxlogo" class="cls-1" points="198.78 196.07 21.36 325.42 134.75 28.07 248.13 325.42 70.78 196.07"/>
-                </svg>
+                                .wateranimate{
+                                    transform: rotate(0deg);
+                                    transition: all 0.3s ease-in-out;
+                                }
+                            </style>
+                        </defs>
+                        <polyline id="avaxlogo" class="cls-1" points="198.78 196.07 21.36 325.42 134.75 28.07 248.13 325.42 70.78 196.07"/>
+                    </svg>
+                </a>
             </div>
             
             <div class="c-hamburger c-hamburger--arrow-right relative z-50" id="avaxhamburger">
@@ -57,7 +59,7 @@ const menuitems = menudata[0].menuItems.edges;
         </div>
 
         <div class="absolute h-screen top-0 flex items-center left-0" id="avax-copyright">
-            <p class="bg-avaxbg">© 2023 Augustin Malle</p>
+            <p class="bg-avaxbg">© 2023 AVAX</p>
         </div>
 
 
@@ -74,12 +76,12 @@ const menuitems = menudata[0].menuItems.edges;
         </div>
 
 
-        <div class="absolute left-0 h-screen flex top-0 items-center justify-center bg-slate-50 w-full" id="avax-services">
-            <div class=" flex flex-wrap justify-center absolute bottom-32 sm:bottom-1/4 px-2">
-                <span class="mx-2 bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border my-2 text-center">Webdevelopement</span>
-                <span class="mx-2 bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border my-2 text-center">Webdesign</span>
-                <span class="mx-2 bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border my-2 text-center">Consulting</span>
-                <span class="mx-2 bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border my-2 text-center">Marketing</span>
+        <div class="absolute left-0 h-screen flex top-0 items-center justify-center bg-slate-50 w-full z-30 avax-services" id="avax-services-main">
+            <div class=" flex flex-wrap justify-center absolute bottom-32 sm:bottom-1/4 px-2 items-center h-8   ">
+                <a class="bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border text-center">Webdevelopement</a>
+                <a class=" bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border text-center">Webdesign</a>
+                <a class=" bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border text-center">Consulting</a>
+                <a class=" bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border text-center">Marketing</a>
             </div>
         </div>
 

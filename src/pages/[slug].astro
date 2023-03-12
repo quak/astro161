@@ -1,12 +1,19 @@
 ---
 import { getAllPagesWithSlugsAlt,getPageBySlugAlt } from '../lib/api';
-import Navigation from '../components/Navigation.astro';
+
+import Paragraph from '../components/Paragraph.astro';
+import Aboutus from '../components/Aboutus.astro';
+import Projects from '../components/Projects.astro';
+
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Debug } from 'astro/components';
+
+import * as use from '../components/index.js';
+import Switch from '../components/Switch.astro';
+import { AstroComponentInstance } from 'astro/dist/runtime/server';
 
 export async function getStaticPaths() {
-  //const pagesWithSlugs = await getAllPagesWithSlugs(); 
-//console.log(pagesWithSlugs);
 const pagesWithSlugsAlt = await getAllPagesWithSlugsAlt(); 
 
 return await pagesWithSlugsAlt.edges.map(({ node }) => {
@@ -18,17 +25,29 @@ return await pagesWithSlugsAlt.edges.map(({ node }) => {
 }
 
 const { slug } = Astro.params;
-const asdasd = "asdasd";
 
 const page = await getPageBySlugAlt(slug);
 
+const blocks = page.blocks;
+
+
+
+let value = 2;
 ---
 
-<BaseLayout pageTitle={page.title}>
-  <div class="flex flex-col p-10">
-    <article class="prose lg:prose-xl">
-      <Fragment set:html="page.content"/>
+
+<BaseLayout pageTitle={page.title} pageContent={page.content}>
+  
       
-    </article>
-  </div>
+      {blocks.map((block) => <use.switch name={block.name}>
+        <use.case slot={null}>Return:null</use.case>
+        <use.case slot={undefined}>Return:Undefined</use.case>
+        <use.case slot={'core/paragraph'}><Paragraph block={block}/></use.case>
+        <use.case slot={'acf/aboutus'}><Aboutus block={block}/></use.case>
+        <use.case slot={'acf/projects'}><Projects block={block}/></use.case>
+        <use.default>
+          <h1>Hello default!</h1>
+        </use.default>
+      </use.switch>)}
+
 </BaseLayout>

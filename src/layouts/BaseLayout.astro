@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
-const {pageTitle} = Astro.props
+import Footer from '../components/Footer.astro';
+const {pageTitle,pageContent} = Astro.props
 ---
 <html lang="en" class="bg-avaxbg">
   <head>
@@ -11,12 +12,18 @@ const {pageTitle} = Astro.props
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="AstroAvax">
     <title>{pageTitle}</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
+
   </head>
   <body class="bg-avaxbg">
     
       <Navigation/>
-      <h1>{pageTitle}</h1>
       <slot />
-    
+      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>    
+      <Footer/>
   </body>
 </html>

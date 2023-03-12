@@ -1,0 +1,94 @@
+---
+const {title} = Astro.props;
+const {block} = Astro.props;
+
+import '../styles/Projects.css';
+
+const parsedJSON = JSON.parse(block.attributesJSON);
+
+// import Swiper bundle with all modules installed
+import Swiper from 'swiper/bundle';
+
+// import styles bundle
+import 'swiper/css/bundle';
+console.log(Astro.props);
+---
+<div class="mx-auto  py-24 px-12">
+    
+    <p class="text-9xl avax-f text-avaxpink">What we build...</p>
+    <div class="relative block">
+        <div class="swiper relative">
+
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper relative">
+            <!-- Slides -->
+            <div class="swiper-slide avax-projects rounded-2xl border-dashed border-avaxdark border p-2">
+                <div class="avax-projects-inner relative"> 
+                    <video autoplay playsinline muted loop src="/projectsbg.mov" class="fullscreen">
+                    </video>
+                    <div class="absolute top-0 p-4 text-slate-100 text-white h-full">
+                        <div class="h-full relative">
+                            <h3 class="text-slate-100 text-avaxpink text-2xl font-bold mb-4">Kuhmarathon</h3>
+                            <p class="text-white text-greylight">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est</p>                        
+                            <div class="avax-project-services absolute bottom-0">
+                                <div>
+                                    <a class="bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border text-center my-1 mr-1 inline-block" href="https://www.kaerntnermilch.at/" target="_blank">Kunde: Kärntnermilch</a>
+                                </div>
+                                <div>
+                                    <a class="bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border text-center my-1 mr-1 inline-block">Webdevelopement</a>
+                                    <a class="bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border text-center my-1 mr-1 inline-block ">Webdesign</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide avax-projects rounded-2xl border-dashed border-avaxdark border p-2 ">
+                <div class="avax-projects-inner relative"> 
+                    <video autoplay playsinline muted loop src="/projectsbg.mov" class="fullscreen">
+                    </video>
+                </div>
+            </div>
+            <div class="swiper-slide avax-projects rounded-2xl border-dashed border-avaxdark border p-2">
+                <div class="avax-projects-inner relative"> 
+                    <video autoplay playsinline muted loop src="/projectsbg.mov" class="fullscreen">
+                    </video>
+                </div>
+            </div>
+            
+            </div>
+        
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        
+        
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        slidesPerView: 3,
+        spaceBetween: 30
+    });
+});
+</script>

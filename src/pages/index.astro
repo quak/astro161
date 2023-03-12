@@ -1,19 +1,34 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import { getAllPagesWithSlugsAlt,getPageBySlugAlt } from '../lib/api';
+
+import Paragraph from '../components/Paragraph.astro';
+import Aboutus from '../components/Aboutus.astro';
+import Projects from '../components/Projects.astro';
 
 import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+
+import * as use from '../components/index.js';
+
+const page = await getPageBySlugAlt("home");
+const blocks = page.blocks;
+
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>AstroAvaxwith Tailwind</title>
-	</head>
-	<body>
-		<Navigation/>
-		<h1 class="mb-8 mt-16">Astroavax</h1>
-	</body>
-</html>
+
+<BaseLayout pageTitle={page.title} pageContent={page.content}>
+  
+      
+      {blocks.map((block) => <use.switch name={block.name}>
+        <use.case slot={null}>Return:null</use.case>
+        <use.case slot={undefined}>Return:Undefined</use.case>
+        <use.case slot={'core/paragraph'}><Paragraph block={block}/></use.case>
+        <use.case slot={'acf/aboutus'}><Aboutus block={block}/></use.case>
+        <use.case slot={'acf/projects'}><Projects block={block}/></use.case>
+        <use.default>
+          <h1>Hello default!</h1>
+        </use.default>
+      </use.switch>)}
+
+</BaseLayout>

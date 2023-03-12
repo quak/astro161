@@ -78,6 +78,7 @@ html,body {
 .avax-blendout{
     animation: showout 1s;
     animation-fill-mode: forwards;
+    
 }
 
 .avax-blendin{
@@ -126,8 +127,24 @@ html,body {
     opacity: 0;
 }
 
-#avax-services span{
+.avax-services a{
     padding: 4px 12px;
     opacity: 0.5;
     cursor: pointer;
+    height: 26px;
+    margin: 0 0.5rem
+}
+
+
+.avax-services a:hover{
+    padding: 6px 16px;
+    opacity: 0.75;
+    cursor: pointer;
+    height: 30px;
+    margin: 0 4px;
+    
+}
+
+.avax-blendout{
+    z-index: 0;
 }

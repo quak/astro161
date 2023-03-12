@@ -1,0 +1,9 @@
+---
+const {title} = Astro.props;
+const {block} = Astro.props;
+
+const parsedJSON = JSON.parse(block.attributesJSON);
+const content = parsedJSON.content;
+---
+
+<Fragment set:html={content} />

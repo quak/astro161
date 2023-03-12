@@ -1,0 +1,19 @@
+---
+const {title} = Astro.props;
+const {block} = Astro.props;
+
+const parsedJSON = JSON.parse(block.attributesJSON);
+
+const content = parsedJSON.data.text;
+const subtitle = parsedJSON.data.subtitle;
+---
+<div class="mx-auto max-w-7xl py-24 px-12 lg:px-8">
+    <div class="flex gap-10">
+        <div class="basis-3/4">
+            <p class="text-2xl font-bold mt-16"><Fragment set:html={content} /></p>
+        </div>
+        <div class="basis-1/4">
+            <p class="text-9xl avax-f text-avaxpink"><Fragment set:html={subtitle} /></p>
+        </div>
+    </div>
+</div>

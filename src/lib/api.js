@@ -43,6 +43,10 @@ const API_URL = process.env.WP_URL
           page(id: "${slug}", idType: URI) {
             title
             content
+            blocks {
+              name
+              attributesJSON
+            }
           }
         }`,
         variables: {

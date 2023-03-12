@@ -1,0 +1,39 @@
+.avax-projects{
+    width: 300px;
+    height: 600px;
+    border-radius: 15px;
+    
+}
+
+.avax-projects-inner{
+    
+    height: 100%;
+    border-radius: 9px;
+    
+    background-image: url("/../../ui.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.swiper {
+    
+    height: 450px;
+  }
+
+  .swiper-slide-next{
+
+  }
+
+video.fullscreen{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}  
+
+
+.avax-project-services a {
+    padding: 4px 12px;
+    opacity: 0.5;
+    height: 26px;
+}
