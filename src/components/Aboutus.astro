@@ -5,15 +5,14 @@ const {block} = Astro.props;
 const parsedJSON = JSON.parse(block.attributesJSON);
 
 const content = parsedJSON.data.text;
+const subtext = parsedJSON.data.subtext;
 const subtitle = parsedJSON.data.subtitle;
 ---
-<div class="mx-auto max-w-7xl py-24 px-12 lg:px-8">
-    <div class="flex gap-10">
-        <div class="basis-3/4">
-            <p class="text-2xl font-bold mt-16"><Fragment set:html={content} /></p>
-        </div>
-        <div class="basis-1/4">
-            <p class="text-9xl avax-f text-avaxpink"><Fragment set:html={subtitle} /></p>
-        </div>
-    </div>
+
+
+<div class="mx-auto max-w-7xl py-16 px-12 lg:px-8 relative ">
+    <p class="text-4xl font-bold max-w-4xl text-avaxpink"><Fragment set:html={content} /></p>
+    <p class="text-2xl max-w-2xl pt-4 mt-4 border-dashed border-avaxdark border-t "><Fragment set:html={subtext} /></p>
+    <p class="text-11xl avax-f absolute bottom-0 right-0 opacity-5"><Fragment set:html={subtitle} /></p>
+    
 </div>

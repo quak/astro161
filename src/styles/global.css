@@ -10,7 +10,29 @@
     font-display: swap;
   }
 
+  @font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }  
 
 .avax-f{
-  font-family: BrokenDreams;
+  font-family: Playfair;
+}
+
+.avax-triangle{
+  background-image: url(/public/avaxoutline.svg);
+  background-repeat: no-repeat;
+  transform: rotate(100deg);
+  position: absolute;
+  top: -150%;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after{
+  color: #f92564;
+  font-size:30px;
 }
