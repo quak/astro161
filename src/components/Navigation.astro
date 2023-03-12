@@ -52,8 +52,7 @@ const menuitems = menudata[0].menuItems.edges;
         
         <div class="absolute w-full left-0 h-screen flex top-0 items-center justify-center bg-slate-50" id="avaxmaintitle">
             <div class="absolute top-1/4 text-center">
-                 <h1 class="text-8xl sm:text-9xl block text-center font-bold py-4 leading-12 text-avaxdark">AVAX</h1>
-                 <span></span>
+                 <h1 class="text-8xl sm:text-9xl block text-center font-bold sm:py-4 leading-12 text-avaxdark">AVAX</h1>
                  <h2 class="text-6xl sm:text-8xl" id="avax-di">Digital ideas</h2>
             </div>
         </div>
@@ -69,7 +68,7 @@ const menuitems = menudata[0].menuItems.edges;
             </span>
         </div>
         
-        <div class="absolute left-0 h-screen flex top-0 items-center justify-center bg-slate-50 w-full z-40 avax-blendout" id="avaxmenu">
+        <div class="absolute left-0 h-screen flex top-0 items-center justify-center bg-slate-50 w-full z-40" id="avaxmenu">
             <div class="">
                 {menuitems.map((menuitem) => <a class="text-6xl sd:text-8xl block text-center font-bold py-4 leading-12 avax-menuitem text-avaxpink avax-blendin"  href={menuitem.node.path}>{menuitem.node.label}</a>)}
             </div>
