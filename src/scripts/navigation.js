@@ -29,6 +29,14 @@ document.getElementById('avaxhamburger').addEventListener('click', () => {
   document.getElementById('avaxhamburger').classList.toggle('active');
   document.getElementById('avaxlogo').classList.toggle('fireanimate');
 
+  const avaxcontact = document.getElementById('avax-Contact');
+  if(avaxcontact){
+    avaxcontact.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log("contactclick");
+    });
+  }
+
 
   
 });
