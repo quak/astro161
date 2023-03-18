@@ -69,20 +69,23 @@ const menuitems = menudata[0].menuItems.edges;
         </div>
         
         <div class="absolute left-0 h-screen flex top-0 items-center justify-center bg-slate-50 w-full z-40" id="avaxmenu">
-            <div class="avaxmenu-wrapper">
-                {menuitems.map((menuitem) => <a class="text-6xl sd:text-8xl block text-center font-bold py-4 leading-12 avax-menuitem text-avaxpink avax-blendin" id={`avax-${menuitem.node.label}`}  href={menuitem.node.path}>{menuitem.node.label}</a>)}
-            </div>
-            <div class="avaxcontact flex flex-col">
-                <span class="flex">
-                    <a href="tel:+436505056644" target="_blank"><img class="h-12 w-12" src="/call-outline.svg"/></a>
-                    <a href="mailto:office@avax.at" target="_blank"><img class="h-12 w-12" src="/mail-outline.svg"/></a>
-                </span>
-                <span class="avaxcontact-line"></span>
-                <span class="flex">
-                    <input type="text" class="p-1 m-1 vax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border " id="avaxname" name="avaxname">
-                    <input type="text" class="p-1 m-1 avax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border " id="avaxsubject" name="avaxsubject">
-                </span>
-                <textarea class="p-1 m-1 avax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border " id="avaxsubject" name="avaxsubject" rows="4" cols="50"></textarea>
+            <div class="flex justify-center items-center">
+                <div class="avaxmenu-wrapper absolute"> 
+                    {menuitems.map((menuitem) => <a class="text-6xl sd:text-8xl block text-center font-bold py-4 leading-12 avax-menuitem text-avaxpink avax-blendin" id={`avax-${menuitem.node.label}`}  href={menuitem.node.path}>{menuitem.node.label}</a>)}
+                </div>
+                <div class="avaxcontact flex flex-col absolute">
+                    <span class="flex justify-around">
+                        <span id="avax-bcktomenu"><img class="h-12 w-12" src="/arrow-back-outline.svg"/></span>
+                        <a href="tel:+436505056644" target="_blank"><img class="h-12 w-12" src="/call-outline.svg"/></a>
+                        <a href="mailto:office@avax.at" target="_blank"><img class="h-12 w-12" src="/mail-outline.svg"/></a>
+                    </span>
+                    <span class="avaxcontact-line"></span>
+                    <span class="flex">
+                        <input type="text" class=" flex-1 py-2 px-2 my-2 mx-1 vax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border " id="avaxname" name="avaxname" placeholder="Name">
+                        <input type="text" class=" flex-1 py-2 px-2 my-2 mx-1 avax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border " id="avaxsubject" name="avaxsubject" placeholder="Subject">
+                    </span>
+                    <textarea class="py-2 px-2 m-1 avax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border " id="avaxsubject" name="avaxsubject" rows="4" cols="50"  placeholder="Message"></textarea>
+                </div>
             </div>
         </div>
 

@@ -1,5 +1,13 @@
 
+  
+
+
+
+
 document.getElementById('avaxhamburger').addEventListener('click', () => {
+
+  
+
   document.getElementById('avaxlogo').classList.remove('wateranimate');
   
   
@@ -33,10 +41,17 @@ document.getElementById('avaxhamburger').addEventListener('click', () => {
   if(avaxcontact){
     avaxcontact.addEventListener('click', (e) => {
       e.preventDefault();
-      console.log("contactclick");
+      document.getElementById('avaxmenu').classList.toggle('contactactivated');
     });
   }
 
+  const avaxbcktomenu = document.getElementById('avax-bcktomenu');
+  if(avaxbcktomenu){
+    avaxbcktomenu.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('avaxmenu').classList.toggle('contactactivated');
+    });
+  }
 
   
 });
