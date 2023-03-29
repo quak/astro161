@@ -5,6 +5,42 @@ dotenv.config();
 const API_URL = process.env.WP_URL
 
 
+  export async function getAllProjects(){
+      
+    const response = await fetch("https://wordpress-754698-3209078.cloudwaysapps.com/graphql",
+    {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        query: `    {
+          projects {
+            nodes {
+              projectsacf {
+                customer
+                excerpt
+                projectimage {
+                  id
+                  sourceUrl(size: AVAX_PROJECTS)
+                }
+              }
+              title
+              categories {
+                edges {
+                  node {
+                    id
+                    name
+                  }
+                }
+              }
+            }
+          }
+      }`
+      }),
+    }).then(data=>data.json())
+
+    const posts = response?.data?.projects?.nodes;
+    return posts;
+  }
 
   export async function getAllPagesWithSlugsAlt(){
     

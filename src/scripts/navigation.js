@@ -32,7 +32,10 @@ document.getElementById('avaxhamburger').addEventListener('click', () => {
     document.querySelector('#avaxmaintitle').classList.remove('avax-anim-neg');
 
     document.querySelector('#avaxmenu').classList.add('avax-blendin');
-  document.querySelector('#avaxmenu').classList.remove('avax-blendout');
+    document.querySelector('#avaxmenu').classList.remove('avax-blendout');
+
+    document.querySelector('#avaxmenu').classList.remove('contactactivated');
+  
   }
   document.getElementById('avaxhamburger').classList.toggle('active');
   document.getElementById('avaxlogo').classList.toggle('fireanimate');
