@@ -137,3 +137,47 @@ const API_URL = process.env.WP_URL
     const page = response?.data?.menus?.nodes;
     return page;
   }
+
+  export async function getAllCategories(){
+    
+    const response = await fetch("https://wordpress-754698-3209078.cloudwaysapps.com/graphql",
+    {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        query: `    {
+          categories(where:{parent:8}){
+            edges {
+              node {
+                slug
+                name
+              }
+            }
+          }
+        }`,
+      }),
+    }).then(data=>data.json())
+
+    const posts = response?.data?.categories;
+    return posts;
+  }
+
+  export async function getCategoryBySlug(slug) {
+   
+    const response = await fetch("https://wordpress-754698-3209078.cloudwaysapps.com/graphql",
+    {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        query: `    {
+          category(id: "${slug}", idType: SLUG) {
+            name
+          }
+        }`,
+      }),
+    }).then(data=>data.json())
+
+    
+    const page = response?.data?.category;
+    return page;
+  }

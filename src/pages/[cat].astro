@@ -1,0 +1,37 @@
+---
+import { getAllCategories,getCategoryBySlug } from '../lib/api';
+
+import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const categories = await getAllCategories(); 
+  
+
+  return await categories.edges.map(({ node }) => {
+    return {
+      params: { cat: node.slug },
+    };
+  });
+}
+
+const { cat } = Astro.params;
+
+const cate = await getCategoryBySlug(cat);
+
+
+
+
+
+let value = 2;
+---
+
+
+
+
+<BaseLayout pageTitle={cate.name}>
+  
+      
+    <p>Category for {cate.name} with Base Layout</p>
+
+</BaseLayout>

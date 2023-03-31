@@ -56,7 +56,38 @@ document.getElementById('avaxhamburger').addEventListener('click', () => {
     });
   }
 
-  
+
+
+  const avaxsendform = document.getElementById('avax-sendform');
+  if(avaxsendform){
+    avaxsendform.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      let data = {
+        name: document.getElementById('avax-contact-name').value,
+        email: document.getElementById('avax-contact-email').value,
+        message: document.getElementById('avax-contact-msg').value,
+      }
+      
+      fetch("http://95.217.152.186:5678/webhook/641ab247-0cc6-426a-b8f4-6f76f6ddde55", {
+          method: 'post',
+          body: JSON.stringify(data),
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+          }
+      }).then((response) => {
+          return response.json()
+      }).then((res) => {
+          if (res.status === 201) {
+              console.log("Post successfully created!")
+          }
+      }).catch((error) => {
+          console.log(error)
+      })
+
+    });
+  }  
 });
 
 

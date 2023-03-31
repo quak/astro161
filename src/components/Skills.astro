@@ -1,0 +1,18 @@
+---
+
+import { getAllCategories } from '../lib/api';
+
+
+const categories = await getAllCategories(); 
+
+
+---
+
+{categories.edges.map((skill) => 
+    <a class="bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border text-center" href={`/${skill.node.slug}`}{skill.node.slug}>{skill.node.name}</a>        
+)}
+        
+
+    
+            
+            

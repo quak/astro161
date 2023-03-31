@@ -1,6 +1,9 @@
 ---
 import { getMenu } from '../lib/api';
 import '../styles/Navigation.css';
+
+import Skills from '../components/Skills.astro';
+
 const menudata = await getMenu();
 const menuitems = menudata[0].menuItems.edges;
 ---
@@ -84,11 +87,11 @@ const menuitems = menudata[0].menuItems.edges;
                     <hr class="avaxcontact-line"/>
                     <form class="relative">
                         <span class="flex flex-col sm:flex-row">
-                            <input type="text" autocomplete="name" class=" flex-1 py-2 px-2 my-2 mx-1 vax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border " id="avaxname" name="avaxname" placeholder="Name">
-                            <input type="text" autocomplete="email" class=" flex-1 py-2 px-2 my-2 mx-1 avax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border " id="avaxsubject" name="avaxsubject" placeholder="E-Mail">
+                            <input id="avax-contact-name" type="text" autocomplete="name" class=" flex-1 py-2 px-2 my-2 mx-1 vax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border " id="avaxname" name="avaxname" placeholder="Name">
+                            <input id="avax-contact-email" type="text" autocomplete="email" class=" flex-1 py-2 px-2 my-2 mx-1 avax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border " id="avaxsubject" name="avaxsubject" placeholder="E-Mail">
                         </span>
-                        <textarea class="w-full py-2 px-2 m-1 avax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border block" id="avaxsubject" name="avaxsubject" rows="4" cols="50"  placeholder="Message"></textarea>
-                        <button type="submit" class="w-full m-1 my-4 bg-avaxlightpink hover:bg-avaxpink text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline block">Send</button>
+                        <textarea id="avax-contact-msg" class="w-full py-2 px-2 m-1 avax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border block" id="avaxsubject" name="avaxsubject" rows="4" cols="50"  placeholder="Message"></textarea>
+                        <button id="avax-sendform" type="submit" class="w-full m-1 my-4 bg-avaxlightpink hover:bg-avaxpink text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline block" >Send</button>
                     </form>
 
                 </div>
@@ -98,10 +101,9 @@ const menuitems = menudata[0].menuItems.edges;
 
         <div class="absolute left-0 h-screen flex top-0 items-center justify-center bg-slate-50 w-full z-30 avax-services" id="avax-services-main">
             <div class=" flex flex-wrap justify-center absolute bottom-56 sm:bottom-1/4 px-2 items-center h-8 ">
-                <a class="bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border text-center">Webdevelopement</a>
-                <a class=" bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border text-center">Webdesign</a>
-                <a class=" bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border text-center">Consulting</a>
-                <a class=" bg-avaxbg text-avaxdark text-xs uppercase rounded-2xl border-dashed border-avaxdark border text-center">Marketing</a>
+        
+                <Skills/>
+                
             </div>
         </div>
 
