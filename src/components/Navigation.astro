@@ -3,6 +3,7 @@ import { getMenu } from '../lib/api';
 import '../styles/Navigation.css';
 
 import Skills from '../components/Skills.astro';
+import Contact from '../components/Contact.astro';
 
 const menudata = await getMenu();
 const menuitems = menudata[0].menuItems.edges;
@@ -78,23 +79,7 @@ const menuitems = menudata[0].menuItems.edges;
                 <div class="avaxmenu-wrapper absolute"> 
                     {menuitems.map((menuitem) => <a class="text-6xl sd:text-8xl block text-center font-bold py-4 leading-12 avax-menuitem text-avaxpink avax-blendin" id={`avax-${menuitem.node.label}`}  href={menuitem.node.path}>{menuitem.node.label}</a>)}
                 </div>
-                <div class="avaxcontact flex flex-col absolute max-w-full px-8 sm:px-0">
-                    <span class="flex justify-around">
-                        <span id="avax-bcktomenu" class="cursor-pointer"><img class="h-12 w-12" src="/arrow-back-outline.svg"/></span>
-                        <a href="tel:+436505056644" target="_blank"><img class="h-12 w-12" src="/call-outline.svg"/></a>
-                        <a href="mailto:office@avax.at" target="_blank"><img class="h-12 w-12" src="/mail-outline.svg"/></a>
-                    </span>
-                    <hr class="avaxcontact-line"/>
-                    <form class="relative">
-                        <span class="flex flex-col sm:flex-row">
-                            <input id="avax-contact-name" type="text" autocomplete="name" class=" flex-1 py-2 px-2 my-2 mx-1 vax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border " id="avaxname" name="avaxname" placeholder="Name">
-                            <input id="avax-contact-email" type="text" autocomplete="email" class=" flex-1 py-2 px-2 my-2 mx-1 avax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border " id="avaxsubject" name="avaxsubject" placeholder="E-Mail">
-                        </span>
-                        <textarea id="avax-contact-msg" class="w-full py-2 px-2 m-1 avax-input text-avaxdark text-xs rounded-xl border-dashed border-avaxdark border block" id="avaxsubject" name="avaxsubject" rows="4" cols="50"  placeholder="Message"></textarea>
-                        <button id="avax-sendform" type="submit" class="w-full m-1 my-4 bg-avaxlightpink hover:bg-avaxpink text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline block" >Send</button>
-                    </form>
-
-                </div>
+                <Contact/>
             </div>
         </div>
 

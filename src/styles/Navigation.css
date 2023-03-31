@@ -165,18 +165,50 @@ html,body {
 
 
 #avaxmenu .avaxcontact{
-    transition: transform .5s ease;
-    transform: translateX(500%);
-    -webkit-transform: translateX(500%);
+    transition: transform 1s ease;
+    transform: translateX(1000%);
+    -webkit-transform: translateX(1000%);
 }
 
+#avaxmenu form{
+    transition: transform 1s ease;
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+}
 
 #avaxmenu.contactactivated .avaxcontact{
     transform: translateX(0%);
     -webkit-transform: translateX(0%);
 }
 
+#avaxmenu.contactactivated.avax-sent form{
+    transform: translateX(1000%);
+    -webkit-transform: translateX(1000%);
+}
+
+
 #avaxmenu.contactactivated .avaxmenu-wrapper{
-    transform: translateX(-500%);
-    -webkit-transform: translateX(-500%);
+    transform: translateX(-1000%);
+    -webkit-transform: translateX(-1000%);
+}
+
+
+
+
+
+
+#avaxmenu .avaxsent{
+    transition: transform 1s ease;
+    transform: translateX(1000%);
+    -webkit-transform: translateX(1000%);
+}
+
+#avaxmenu.contactactivated.avax-sent .avaxsent{
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+}
+
+.avax-empty{
+    border-color: #f081a2;
+    border-width: 2px;
 }
