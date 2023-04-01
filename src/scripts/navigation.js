@@ -111,7 +111,7 @@ document.getElementById('avaxhamburger').addEventListener('click', () => {
           message: document.getElementById('avax-contact-msg').value,
         }
         
-        fetch("https://avaxtech.at:5678/webhook/641ab247-0cc6-426a-b8f4-6f76f6ddde55", {
+        fetch("https://avaxtech.at:5678/webhook/27056320-8c00-4331-a778-fa3a16d6e141", {
             method: 'post',
             body: JSON.stringify(data),
             headers: {
