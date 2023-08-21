@@ -1,0 +1,28 @@
+---
+import { getAllSlugsOfProjects } from '../lib/api';
+
+import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getAllSlugsOfProjects();
+
+  return await projects.nodes.map(node => {
+    return {
+      params: { project: node.slug },
+    };
+  });
+}
+
+const { project } = Astro.params;
+---
+
+
+
+
+<BaseLayout pageTitle="Projektorisch">
+  
+      
+    <p>Project 0815 with Base Layout</p>
+
+</BaseLayout>

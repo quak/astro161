@@ -1,10 +1,24 @@
 
+/*
+const initheight = document.getElementById('bg').offsetHeight;
+window.addEventListener('scroll',(event) => {
+  var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
   
+
+  
+  var height = initheight-scrollTop*2;
+  console.log(initheight + " : "+scrollTop+" : "+scrollTop*2+" : "+height.toString()+"px");
+  document.getElementById('bg').style.height = height.toString()+"px";
+
+  
+});*/
+
 
 
 
 
 document.getElementById('avaxhamburger').addEventListener('click', () => {
+
 
   
 
